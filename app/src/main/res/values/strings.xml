@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">ValeFise</string>
+    <string name="tv_valfis">Vales FISE</string>
+    <string name="et_cli">Cliente</string>
+    <string name="et_nomcli">Nombre</string>
+    <string name="et_dnicli">DNI</string>
+    <string name="bt_regcli">REGISTRAR</string>
+    <string name="bt_edicli">EDITAR</string>
+    <string name="tv_entgas">Entregar gas</string>
+    <string name="et_numval">n° vales</string>
+    <string name="et_enc">Encargado</string>
+    <string name="et_cangas">Cantidad gas</string>
+    <string name="bt_entgas">ENTREGAR</string>
+    <string name="et_elicli">ELIMINAR</string>
+</resources>

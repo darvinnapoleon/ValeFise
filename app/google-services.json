@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "292241677955",
+    "firebase_url": "https://controlusuario-6be81-default-rtdb.firebaseio.com",
+    "project_id": "controlusuario-6be81",
+    "storage_bucket": "controlusuario-6be81.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:292241677955:android:214cea83b183444c1405b6",
+        "android_client_info": {
+          "package_name": "com.example.valefise"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "292241677955-sgda449vesjno3lsmobq9i6b628sd5n7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1yBoS-3RxP3B06Sy4NKTD5zsF51xFufI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "292241677955-sgda449vesjno3lsmobq9i6b628sd5n7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

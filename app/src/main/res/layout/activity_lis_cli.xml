@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LisCliActivity">
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/bt_nuecli"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@android:drawable/ic_input_add" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/bt_impcli"
+                android:layout_width="35dp"
+                android:layout_height="27dp"
+                android:background="@mipmap/upload" />
+
+            <Button
+                android:id="@+id/bt_expcli"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@mipmap/dowload" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_buscli"
+            android:hint="@string/et_cli"/>
+        <Button
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:id="@+id/bt_buscli"
+            android:background="@android:drawable/ic_search_category_default"/>
+    </LinearLayout>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lv_cli"/>
+</LinearLayout>
