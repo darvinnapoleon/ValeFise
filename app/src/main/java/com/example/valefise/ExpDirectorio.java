@@ -71,7 +71,7 @@ public class ExpDirectorio extends AppCompatActivity implements AdapterView.OnIt
     }
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         File archivo = new File(rutArchivos.get(i));
-        if (archivo.isFile()){}
+        if (archivo.isFile()){
             Intent is = new Intent(this, LisCliActivity.class);
             is.putExtra("archi", archivo.getAbsolutePath());
             startActivity(is);
@@ -80,3 +80,4 @@ public class ExpDirectorio extends AppCompatActivity implements AdapterView.OnIt
         }
     }
 
+}
