@@ -33,7 +33,7 @@ int REQUEST_CODE = 200;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lis_cli);
-        //pedir permisos
+        //pedir permisos en secuencia todos ok
         pedirPermisos();
         //objetos de flotantes y crud de clientes
         coninf = new conInflaters();
