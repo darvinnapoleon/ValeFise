@@ -5,20 +5,24 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".canvalActivity">
+
     <LinearLayout
+        style="@style/AppTheme.pading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <EditText
+            android:id="@+id/et_buscli"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:id="@+id/et_buscli"
-            android:hint="@string/et_cli"/>
+            android:hint="@string/et_cli" />
+
         <Button
+            android:id="@+id/bt_buscli"
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:id="@+id/bt_buscli"
-            android:background="@android:drawable/ic_search_category_default"/>
+            android:background="@drawable/ico_search" />
     </LinearLayout>
     <ListView
         android:layout_width="match_parent"

@@ -1,15 +1,31 @@
 <resources>
     <string name="app_name">ValeFise</string>
+    //Text view
     <string name="tv_valfis">Vales FISE</string>
+    <string name="tv_entgas">Entregar gas</string>
+    <string name="tv_titcan">Canjear Vales Fise</string>
+    //botones
+    <string name="bt_regcli">REGISTRAR</string>
+    <string name="bt_edicli">EDITAR</string>
+    <string name="bt_eli">ELIMINAR</string>
+    <string name="bt_entgas">ENTREGAR</string>
+
+    //campos de texto
     <string name="et_cli">Cliente</string>
     <string name="et_nomcli">Nombre</string>
     <string name="et_dnicli">DNI</string>
-    <string name="bt_regcli">REGISTRAR</string>
-    <string name="bt_edicli">EDITAR</string>
-    <string name="tv_entgas">Entregar gas</string>
     <string name="et_numval">n° vales</string>
     <string name="et_enc">Encargado</string>
     <string name="et_cangas">Cantidad gas</string>
-    <string name="bt_entgas">ENTREGAR</string>
     <string name="et_elicli">ELIMINAR</string>
+    //menu desplegable
+    <string name="nav_inicio">Inicio</string>
+    <string name="nav_bidones">Bidones</string>
+    <string name="nav_consultar">Consultar</string>
+    <string name="nav_canjear">Canjear</string>
+    <string name="nav_ventas">Ventas</string>
+    <string name="nav_compras">Compras</string>
+    <string name="nav_caja">Caja</string>
+    <string name="open">close</string>
+    <string name="close">close</string>
 </resources>

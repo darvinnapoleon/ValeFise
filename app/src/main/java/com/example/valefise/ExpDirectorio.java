@@ -11,6 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.valefise.consults.daoClientes;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,6 +25,7 @@ public class ExpDirectorio extends AppCompatActivity implements AdapterView.OnIt
     private String dirRaiz;
     private TextView carActual;
     ListView lisDir;
+    daoClientes daocli;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +36,7 @@ public class ExpDirectorio extends AppCompatActivity implements AdapterView.OnIt
         dirRaiz = Environment.getExternalStorageDirectory().getPath();
         lisDir.setOnItemClickListener(this);
         verDirectorio(dirRaiz);
+        daocli = new daoClientes(this);
     }
     private  void verDirectorio(String rutDirectorio){
         nomArchivos = new ArrayList<String>();
@@ -63,7 +67,7 @@ public class ExpDirectorio extends AppCompatActivity implements AdapterView.OnIt
             nomArchivos.add("No hay ningun archivo");
             rutArchivos.add(rutDirectorio);
         }
-        //algo importante
+
         adaptador = new ArrayAdapter<String>(this,
                 R.layout.lista_archivos, nomArchivos);
         lisDir.setAdapter(adaptador);

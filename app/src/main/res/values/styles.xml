@@ -9,4 +9,18 @@
         <item name="android:layout_margin">2dp</item>
     </style>
 
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="AppTheme.pading">
+        <item name="android:paddingTop">60dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="AppTheme.actividad">
+        <item name="android:gravity">center</item>
+    </style>
 </resources>

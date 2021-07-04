@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.valefise.LisCliActivity;
 import com.example.valefise.controller.conClientes;
 import com.example.valefise.model.Clientes;
 import com.example.valefise.model.Pagos;
@@ -34,6 +35,7 @@ public class daoClientes {
         cx = c.openOrCreateDatabase(nombreBD, Context.MODE_PRIVATE, null);
         cx.execSQL(tabla);
     }
+    //insertar un cliente en la base de datos
     public boolean inscli(Clientes c) {
         ContentValues contenedor = new ContentValues();
         contenedor.put("nomcli", c.getNomClientes());
@@ -60,6 +62,21 @@ public class daoClientes {
         return liscli1;
     }
 
+    //verificar si el cliente ya esta registrado y no registrarlo 2 veces
+    public int vercli(String dnicli) {
+        Cursor cursor=cx.rawQuery("select idcli from clientes where dnicli ="+dnicli, null);
+        cursor.moveToLast();
+        if (cursor != null && cursor.getCount()>0){
+            int val;
+            cursor.moveToFirst();
+            do {
+               val=  cursor.getInt(0);
+            }while (cursor.moveToNext());
+            return val;
+        }
+        return 0;
+    }
+    //actualizar clientes
     public boolean actcli(Clientes c){
         ContentValues contenedor = new ContentValues();
         contenedor.put("nomcli", c.getNomClientes());
@@ -85,26 +102,25 @@ public class daoClientes {
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             while ((cadena = bufferedReader.readLine()) != null){
                 arreglo = cadena.split(",");
-                cli = new Clientes(1, ""+arreglo[0], ""+arreglo[1], ""+arreglo[2]);
-                inscli(cli);
-                lisCli = liscli("");
-                adaptador=new conClientes(lisCli, this, a );
-                lvCli.setAdapter(adaptador);
-                lvCli.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                if (vercli(""+arreglo[1]) == 0){
+                    cli = new Clientes(1, ""+arreglo[0], ""+arreglo[1], ""+arreglo[2]);
+                    inscli(cli);
+                    lisCli = liscli("");
+                    adaptador=new conClientes(a ,lisCli, this);
+                    lvCli.setAdapter(adaptador);
+                }else{
+                    Toast.makeText(a, "el cliente ya existe", Toast.LENGTH_SHORT).show();
+                }
 
-                    }
-                });
             }
         } catch (Exception e) {
 
         }
 
     }
-    public void formImportacion(Activity a){
-        File carpeta = new File(Environment.getExternalStorageDirectory() + "/Clientes");
-        String archivo = carpeta.toString()+"/"+"forImporttacion.csv";
+    public void formImportacion(){
+        File carpeta = new File(Environment.getExternalStorageDirectory() + "/ImpClientes");
+        String archivo = carpeta.toString()+"/"+"Clientes.csv";
         boolean isCreate = false;
         if(!carpeta.exists()){
             isCreate= carpeta.mkdir();
@@ -112,16 +128,15 @@ public class daoClientes {
         try {
             FileWriter fileWriter = null;
             fileWriter = new FileWriter(archivo);
-
-            fileWriter.append("Apellidos y Nombres");
-            fileWriter.append(",");
-            fileWriter.append("Dni");
-            fileWriter.append(",");
-            fileWriter.append("Estado(0/1)");
-            fileWriter.append("\n");
-
+            for(int i=0; i<1; i++) {
+                fileWriter.append("Apellidos y Nombres");
+                fileWriter.append(",");
+                fileWriter.append("Dni");
+                fileWriter.append(",");
+                fileWriter.append("Estado(0/1)");
+                fileWriter.append("\n");
+            }
             fileWriter.close();
-            Toast.makeText(a, "Llena el formato en /forImporttacion.csv", Toast.LENGTH_SHORT).show();
         }catch (Exception e){ }
 
     }

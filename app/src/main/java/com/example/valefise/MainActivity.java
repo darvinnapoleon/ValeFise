@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 pag = new Pagos(0, ""+fecact);
                 //accede al metodo insertar pago y le envia id y fecha de pago actual
                 daopag.inspag(pag);
-            Intent liscli = new Intent(MainActivity.this, LisCliActivity.class);
+            Intent liscli = new Intent(MainActivity.this, MainActivity1.class);
             startActivity(liscli);
             } else{
             //accede al metodo para ver la fecha de pagos
@@ -76,11 +76,11 @@ public class MainActivity extends AppCompatActivity {
                     }else{
                         pag = new Pagos(1, ""+fecact);
                         daopag.actpag(pag);
-                        Intent liscli = new Intent(MainActivity.this, LisCliActivity.class);
+                        Intent liscli = new Intent(MainActivity.this, MainActivity1.class);
                         startActivity(liscli);
                     }
                 }else {
-                  Intent liscli = new Intent(MainActivity.this, LisCliActivity.class);
+                  Intent liscli = new Intent(MainActivity.this, MainActivity1.class);
                   startActivity(liscli);
                 }
             }

@@ -1,17 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-   <!-- <group android:checkableBehavior="single">
-        <item android:id="@+id/nav_concod"
-            android:title="@string/nav_concod"
-            android:icon="@drawable/logout_icon"/>
-        <item android:id="@+id/nav_home"
-            android:title="Home"
-            android:icon="@drawable/logout_icon"/>
-        <item android:id="@+id/nav_home"
-            android:title="Home"
-            android:icon="@drawable/logout_icon"/>
-        <item android:id="@+id/nav_home"
-            android:title="Home"
-            android:icon="@drawable/logout_icon"/> e
-    </group>-->
+    <item android:title="Principal">
+        <menu>
+            <item
+                android:id="@+id/nav_ini"
+                android:icon="@drawable/icon_home"
+                android:title="@string/nav_inicio" />
+            <item
+                android:id="@+id/nav_con"
+                android:icon="@drawable/ico_sms"
+                android:title="@string/nav_consultar" />
+            <item
+                android:id="@+id/nav_can"
+                android:icon="@drawable/ico_canj"
+                android:title="@string/nav_canjear" />
+            <item
+                android:id="@+id/nav_bid"
+                android:icon="@drawable/ico_bid"
+                android:title="@string/nav_bidones" />
+            <item
+                android:id="@+id/nav_com"
+                android:icon="@drawable/ico_com"
+                android:title="@string/nav_compras" />
+            <item
+                android:id="@+id/nav_ven"
+                android:icon="@drawable/ico_ven"
+                android:title="@string/nav_ventas" />
+            <item
+                android:id="@+id/nav_caj"
+                android:icon="@drawable/ico_caj"
+                android:title="@string/nav_caja" />
+        </menu>
+    </item>
+
 </menu>
