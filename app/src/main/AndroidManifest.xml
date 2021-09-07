@@ -23,15 +23,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ExpDirectorio"
-            android:configChanges="orientation|screenSize"></activity>
-        <activity android:name=".canvalActivity"
-            android:configChanges="orientation|screenSize"/>
-        <activity android:name=".concodActivity"
-            android:configChanges="orientation|screenSize"/>
-        <activity android:name=".LisCliActivity"
-            android:configChanges="orientation|screenSize"/>
         <activity android:name=".MainActivity1" android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:configChanges="orientation|screenSize"/>
+        <receiver android:name=".controller.ReceiveSms">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>

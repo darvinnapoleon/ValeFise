@@ -3,6 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/AppTheme.actividad"
+        android:orientation="vertical">
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,9 +20,11 @@
         android:id="@+id/et_dnicli"
         android:hint="@string/et_dnicli"
         android:inputType="number"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/bt_regcli"
-        android:text="@string/bt_regcli"/>
+
+        <Button
+            android:id="@+id/bt_regcli"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/ico_gua" />
+    </LinearLayout>
 </LinearLayout>

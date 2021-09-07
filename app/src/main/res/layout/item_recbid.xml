@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/AppTheme.actividad"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <TextView
+        android:id="@+id/tv_nomcli"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_canbid"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/bt_recbid1"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/ico_bid" />
+</LinearLayout>
+

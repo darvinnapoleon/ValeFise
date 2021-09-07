@@ -4,19 +4,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <LinearLayout
+        style="@style/AppTheme.actividad"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:id="@+id/et_nomcli"/>
+        android:id="@+id/tv_nomclitem"/>
 
-    <Button
-        android:id="@+id/bt_edicod"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:background="@android:drawable/ic_menu_edit" />
+    <TextView
+        android:id="@+id/tv_estcli"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/bt_envdni"

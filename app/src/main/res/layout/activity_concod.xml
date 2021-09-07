@@ -1,11 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".concodActivity">
+    android:orientation="vertical">
     <LinearLayout
+        style="@style/AppTheme.pading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        style="@style/AppTheme.actividad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ico_sig"
+            android:id="@+id/bt_inscod"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_titcon"
+            style="@style/AppTheme.titulos"/>
+
+        <EditText
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_tel"
+            android:hint="@string/et_tel"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        style="@style/AppTheme.actividad">
+        <Button
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:id="@+id/bt_impclitem"
+            android:background="@drawable/ico_import"/>
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:id="@+id/bt_guaval"
+            android:background="@drawable/ico_gua"/>
+    </LinearLayout>
+    <LinearLayout
+        style="@style/AppTheme.actividad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -23,5 +67,5 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lv_cli"/>
+        android:id="@+id/lv_clitem"/>
 </LinearLayout>

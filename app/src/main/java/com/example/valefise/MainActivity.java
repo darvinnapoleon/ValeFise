@@ -13,7 +13,9 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.valefise.consults.daoPagos;
@@ -47,44 +49,51 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         inicializarFirebase();
         //listUsuario();
-        //if la fecha no es automatica mostrara toast en pantalla
-      if (isTimeAutomaticEnabled(getApplicationContext()) == false){
-            Toast.makeText(this, "Configura fecha y hora automatica", Toast.LENGTH_LONG).show();
-        }else{
-           daopag = new daoPagos(MainActivity.this);
-           listab = daopag.verTabla();
-           //if la tabla no tiene registros se inserta la fecha de inicio del pago
-        if(listab.get(0).equals(0)){
-                LocalDate fecact = LocalDate.now();
-                pag = new Pagos(0, ""+fecact);
-                //accede al metodo insertar pago y le envia id y fecha de pago actual
-                daopag.inspag(pag);
-            Intent liscli = new Intent(MainActivity.this, MainActivity1.class);
-            startActivity(liscli);
-            } else{
-            //accede al metodo para ver la fecha de pagos
-                lispag = daopag.verPagos();
-                final LocalDate fecpag = LocalDate.parse(lispag.get(0).getFecpag());
-                final LocalDate fecact = LocalDate.now();
-                long dias = ChronoUnit.DAYS.between(fecpag, fecact);
-                //if dias es mayor a 120 debe de verificar su pago
-                if(dias>120){
-                    String pago = "pago";
-                    //verifica si pago y si pago se va  a la actividad lista de clientes sino se queda ahi no mas
-                    if(pago.equals("no pago")){
-                        Toast.makeText(this, "debes de pagar", Toast.LENGTH_SHORT).show();
-                    }else{
-                        pag = new Pagos(1, ""+fecact);
-                        daopag.actpag(pag);
+        Button btsiguiente = (Button) findViewById(R.id.bt_sig);
+        btsiguiente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //if la fecha no es automatica mostrara toast en pantalla
+                if (isTimeAutomaticEnabled(getApplicationContext()) == false){
+                    Toast.makeText(MainActivity.this, "Configura fecha y hora automatica", Toast.LENGTH_LONG).show();
+                }else{
+                    daopag = new daoPagos(MainActivity.this);
+                    listab = daopag.verTabla();
+                    //if la tabla no tiene registros se inserta la fecha de inicio del pago
+                    if(listab.get(0).equals(0)){
+                        LocalDate fecact = LocalDate.now();
+                        pag = new Pagos(0, ""+fecact);
+                        //accede al metodo insertar pago y le envia id y fecha de pago actual
+                        daopag.inspag(pag);
                         Intent liscli = new Intent(MainActivity.this, MainActivity1.class);
                         startActivity(liscli);
+                    } else{
+                        //accede al metodo para ver la fecha de pagos
+                        lispag = daopag.verPagos();
+                        final LocalDate fecpag = LocalDate.parse(lispag.get(0).getFecpag());
+                        final LocalDate fecact = LocalDate.now();
+                        long dias = ChronoUnit.DAYS.between(fecpag, fecact);
+                        //if dias es mayor a 120 debe de verificar su pago
+                        if(dias>120){
+                            String pago = "pago";
+                            //verifica si pago y si pago se va  a la actividad lista de clientes sino se queda ahi no mas
+                            if(pago.equals("no pago")){
+                                Toast.makeText(MainActivity.this, "debes de pagar", Toast.LENGTH_SHORT).show();
+                            }else{
+                                pag = new Pagos(1, ""+fecact);
+                                daopag.actpag(pag);
+                                Intent liscli = new Intent(MainActivity.this, MainActivity1.class);
+                                startActivity(liscli);
+                            }
+                        }else {
+                            Intent liscli = new Intent(MainActivity.this, MainActivity1.class);
+                            startActivity(liscli);
+                        }
                     }
-                }else {
-                  Intent liscli = new Intent(MainActivity.this, MainActivity1.class);
-                  startActivity(liscli);
                 }
             }
-        }
+        });
+
     }
 
     private void listUsuario() {

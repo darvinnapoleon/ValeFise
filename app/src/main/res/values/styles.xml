@@ -23,4 +23,9 @@
     <style name="AppTheme.actividad">
         <item name="android:gravity">center</item>
     </style>
+
+    <style name="AppTheme.titulos">
+        <item name="color">@color/colorTitulos</item>
+        <item name="android:textSize">16dp</item>
+    </style>
 </resources>

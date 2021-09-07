@@ -1,60 +1,62 @@
 package com.example.valefise.model;
 
 public class Bidones {
-    int idbidones;
-    int cantbidones;
-    int idclientes;
-    String fecencargo;
-    String fecreclamo;
+    //asi de esta manera puedes crear cualquier modelo
+    //que tiene variables, constructor y get y set
+    int idbid;
+    int idcli;
+    int canbid;
+    String fecenc;
+    String fecrec;
 
     public Bidones() {
     }
 
-    public Bidones(int idbidones, int cantbidones, int idclientes, String fecencargo, String fecreclamo) {
-        this.idbidones = idbidones;
-        this.cantbidones = cantbidones;
-        this.idclientes = idclientes;
-        this.fecencargo = fecencargo;
-        this.fecreclamo = fecreclamo;
+    public Bidones(int idbid, int idcli, int canbid, String fecenc, String fecrec) {
+        this.idbid = idbid;
+        this.idcli = idcli;
+        this.canbid = canbid;
+        this.fecenc = fecenc;
+        this.fecrec = fecrec;
     }
 
-    public int getIdbidones() {
-        return idbidones;
+    public int getIdbid() {
+        return idbid;
     }
 
-    public void setIdbidones(int idbidones) {
-        this.idbidones = idbidones;
+    public void setIdbid(int idbid) {
+        this.idbid = idbid;
     }
 
-    public int getCantbidones() {
-        return cantbidones;
+    public int getIdcli() {
+        return idcli;
     }
 
-    public void setCantbidones(int cantbidones) {
-        this.cantbidones = cantbidones;
+    public void setIdcli(int idcli) {
+        this.idcli = idcli;
     }
 
-    public int getIdclientes() {
-        return idclientes;
+    public int getCanbid() {
+        return canbid;
     }
 
-    public void setIdclientes(int idclientes) {
-        this.idclientes = idclientes;
+    public void setCanbid(int canbid) {
+        this.canbid = canbid;
     }
 
-    public String getFecencargo() {
-        return fecencargo;
+    public String getFecenc() {
+        return fecenc;
     }
 
-    public void setFecencargo(String fecencargo) {
-        this.fecencargo = fecencargo;
+    public void setFecenc(String fecenc) {
+        this.fecenc = fecenc;
     }
 
-    public String getFecreclamo() {
-        return fecreclamo;
+    public String getFecrec() {
+        return fecrec;
     }
 
-    public void setFecreclamo(String fecreclamo) {
-        this.fecreclamo = fecreclamo;
+    public void setFecrec(String fecrec) {
+        this.fecrec = fecrec;
     }
 }

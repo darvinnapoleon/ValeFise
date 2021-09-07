@@ -5,5 +5,32 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_titcan1"
+        android:textColor="#123562"
+        android:textSize="18dp"/>
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="450dp"
+        android:orientation="vertical"
+        android:background="@mipmap/vale">
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_sig"/>
+        <Button
+            android:id="@+id/bt_sig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ico_sig" />
+    </LinearLayout>
 
 </LinearLayout>

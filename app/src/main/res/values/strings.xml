@@ -4,6 +4,13 @@
     <string name="tv_valfis">Vales FISE</string>
     <string name="tv_entgas">Entregar gas</string>
     <string name="tv_titcan">Canjear Vales Fise</string>
+    <string name="tv_sig">Siguiente</string>
+    <string name="tv_atr">Atras</string>
+    <string name="tv_titcan1">Canjea vales FISE</string>
+    <string name="tv_encbid">Encargar Bidon</string>
+    <string name="tv_recbid">Reclama Bidon</string>
+    <string name="tv_titcon">Consultar Codigos</string>
+    <string name="tv_titins">Insertar Codigos</string>
     //botones
     <string name="bt_regcli">REGISTRAR</string>
     <string name="bt_edicli">EDITAR</string>
@@ -12,12 +19,14 @@
 
     //campos de texto
     <string name="et_cli">Cliente</string>
-    <string name="et_nomcli">Nombre</string>
+    <string name="et_nomcli">Apellidos y Nombres</string>
     <string name="et_dnicli">DNI</string>
     <string name="et_numval">n° vales</string>
     <string name="et_enc">Encargado</string>
     <string name="et_cangas">Cantidad gas</string>
     <string name="et_elicli">ELIMINAR</string>
+    <string name="et_tel">Telefono</string>
+    <string name="et_cod">Codigo Vale</string>
     //menu desplegable
     <string name="nav_inicio">Inicio</string>
     <string name="nav_bidones">Bidones</string>

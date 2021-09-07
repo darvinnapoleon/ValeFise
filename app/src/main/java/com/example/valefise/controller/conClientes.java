@@ -3,20 +3,19 @@ package com.example.valefise.controller;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.telephony.SmsManager;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.example.valefise.LisCliActivity;
 import com.example.valefise.R;
 import com.example.valefise.consults.daoClientes;
 import com.example.valefise.model.Clientes;
@@ -94,20 +93,16 @@ public class conClientes extends BaseAdapter{
             btopc.setTag(posicion);
             btopc.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
+                public void onClick(View view1) {
 
                     //carga una vista de opciones para editar y eliminar
                     int res = R.layout.viewopciones;
-                    int pos = Integer.parseInt(view.getTag().toString());
                     String tit="";
                     AlertDialog.Builder builder = coninf.retbuilder(res, a);
                     AlertDialog dialog = coninf.retdialog(builder, tit);
-
-                    //objeto cliente
-                    c = lista.get(pos);
-
                     //boton editar clientes
                     final Button btedi = (Button) dialog.findViewById(R.id.bt_edi);
+                    btedi.setTag(view1.getTag());
                     btedi.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -117,28 +112,45 @@ public class conClientes extends BaseAdapter{
                             AlertDialog.Builder builder = coninf.retbuilder(res, a);
                             final AlertDialog dialog = coninf.retdialog(builder, tit);
                             final Button btedi = (Button) dialog.findViewById(R.id.bt_regcli);
-                            btedi.setText("EDITAR");
+                            btedi.setBackgroundResource( R.drawable.ico_edi);
                             final EditText nomcli = (EditText)dialog.findViewById(R.id.et_nomcli);
                             final EditText dnicli = (EditText)dialog.findViewById(R.id.et_dnicli);
+                            final int pos = Integer.parseInt(view.getTag().toString());
+                            c = lista.get(pos);
                             nomcli.setText(c.getNomClientes());
                             dnicli.setText(c.getDniClientes());
-                            setId(c.getIdClientes());
-
                             //cuando da click en el boton de editar
+                            btedi.setTag(view.getTag());
                             btedi.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
+                                    final int pos = Integer.parseInt(view.getTag().toString());
+                                    c = lista.get(pos);
                                    int valcam1 = valcam.valcampos(""+nomcli.getText(), "text" );
                                     int valdni = valcam.valcampos(""+dnicli.getText(), "dni" );
                                     if(valcam1 == 0 || valdni == 0){
                                         Toast.makeText(a, "Campos vacios o incompletos", Toast.LENGTH_SHORT).show();
                                         return;
                                     }
-                                    c = new Clientes(getId(), ""+nomcli.getText(), ""+dnicli.getText(), "1");
-                                    dao.actcli(c);
-                                    lista = dao.liscli("");
-                                    notifyDataSetChanged();
-                                    dialog.dismiss();
+                                    if (dao.vercli(dnicli.getText().toString()) == 0  ){
+                                        c = new Clientes(c.getIdClientes(), ""+nomcli.getText(), ""+dnicli.getText(), "1");
+                                        dao.actcli(c);
+                                        lista = dao.liscli("");
+                                        notifyDataSetChanged();
+                                        dialog.dismiss();
+                                        return;
+                                    }else{
+                                        if (c.getDniClientes().equals(dnicli.getText().toString())){
+                                            c = new Clientes(c.getIdClientes(), ""+nomcli.getText(), ""+dnicli.getText(), "1");
+                                            dao.actcli(c);
+                                            lista = dao.liscli("");
+                                            notifyDataSetChanged();
+                                            dialog.dismiss();
+                                        }else {
+                                            Toast.makeText(a, "DNI registrado", Toast.LENGTH_SHORT).show();
+                                        }
+
+                                    }
                                 }
                             });
                         }

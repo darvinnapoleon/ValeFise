@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/AppTheme.pading"/>
+    <LinearLayout
+        style="@style/AppTheme.actividad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="..."/>
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/ico_sig"
+        android:id="@+id/bt_recbid"/>
+    </LinearLayout>
+    <TextView
+        style="@style/AppTheme.titulos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_encbid"/>
+    <LinearLayout
+        style="@style/AppTheme.actividad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_nomcli"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/et_cli" />
+
+            <Button
+                android:id="@+id/bt_buscli"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/ico_search" />
+        </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_cli"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+</LinearLayout>

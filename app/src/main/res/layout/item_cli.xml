@@ -7,7 +7,7 @@
 
     <TextView
         android:id="@+id/tv_nomcli"
-        android:layout_width="wrap_content"
+        android:layout_width="220dp"
         android:layout_height="wrap_content" />
 
     <Button
@@ -17,6 +17,7 @@
         android:background="@drawable/ico_send" />
 
     <Button
+        android:layout_marginLeft="30dp"
         android:id="@+id/bt_opc"
         android:layout_width="35dp"
         android:layout_height="35dp"
